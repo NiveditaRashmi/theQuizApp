@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="margin: 0px;">
+      <!-- <mat-card style="background-color: rgb(5, 63, 5); width: 100%; color: white;"> -->
+        <!-- <mat-card-header> -->
+          <div mat-card-avatar class="avatar"></div>
+          <span style="padding-left: 10px;">John Welch</span>
+        <!-- </mat-card-header> -->
+      <!-- </mat-card> -->
+    </mat-toolbar>
+    <mat-nav-list>
+      <mat-card style="height: 30vh; margin: 10px 10px;">
+      <a mat-list-item href="#" [routerLink]="['/home']" class="link" routerLinkActive="active">Home</a>
+      <a mat-list-item href="#" [routerLink]="['/questions']" class="link">Solve Questions</a>
+      <a mat-list-item href="#" [routerLink]="['/profile']" class="link">View Profile</a>
+    </mat-card>
+
+    <mat-card class="basic-box">
+      <mat-card-header style="border-bottom: 1px solid white;">
+        <mat-card-title><h6 style="font-size: 25px; padding-left: 30px; color: white;">
+          <strong >Summary</strong></h6></mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="margin-top: 10px; ">
+        <p style="color: white; font-weight: bold; text-align: justify;">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>THE QUIZ APP</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

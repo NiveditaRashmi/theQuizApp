@@ -1,0 +1,22 @@
+.jumbotron {
+  background-color: rgb(37, 143, 37);
+  text-align: center;
+  padding-left: 45%;
+  color: white;
+  margin-bottom: 0px !important;
+}
+
+.profile-text {
+  text-align: center;
+  font-stretch: extra-expanded;
+}
+
+.label {
+  width: 30%;
+  margin: 20px 20px;
+  font-weight: bolder;
+
+}
+.text {
+  font-weight: bolder;
+}

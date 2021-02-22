@@ -1,0 +1,12 @@
+<div class="container-fluid"  style="background-color: rgb(239, 255, 239);">
+  <div class="row">
+    <div class="col-md-1 col-lg-1 list-box">
+      <div class="option" *ngFor="let option of options" (click)="openQuestion(option)">
+        {{option}}
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10">
+      <app-question [selectedArr] = "qArray"></app-question>
+    </div>
+  </div>
+</div>

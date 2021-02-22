@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row jumbotron jumbotron-fluid" >
+    <h2 class="profile-text">PROFILE</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <mat-card>
+        <mat-card-header>
+          <mat-tab-group mat-align-tabs="start">
+            <mat-tab label="Basic" >
+              <div>
+                <label class="label">Name: </label>
+                <span class="text">John Welch</span>
+              </div>
+              <div>
+                <label class="label">Email : </label>
+                <span class="text">johnWelch@abc.com</span>
+              </div>
+              <div>
+                <label class="label">Name: </label>
+                <span class="text">John Welch</span>
+              </div>
+              <div>
+                <label class="label">Change Password: </label>
+                <a href="#" class="text">Click to change Password</a>
+              </div>
+            </mat-tab>
+            <mat-tab label="Score Card">
+              <h4 style="text-align: center; margin: 20px auto; ">SCORE CARD</h4>
+              <div class="chart-wrapper">
+                <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [colors]="doughnutChartColors">
+              </canvas>
+            </div>
+            </mat-tab>
+            <mat-tab label="Others">Others</mat-tab>
+          </mat-tab-group>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>
