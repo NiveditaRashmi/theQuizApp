@@ -1,5 +1,5 @@
 <!-- <p>{{qSelected}}</p> -->
-<mat-card style="margin: auto; text-align: center; top: 20px; height: 100vh;" *ngIf="qSelected == 0">
+<mat-card style="margin: auto; text-align: center; top: 20px; height: 100vh;" *ngIf="!showQuestion">
   <mat-card-content style="top: 40%; position: absolute; left: 40%;">
     <button mat-raised-button class="primary" (click)="startQuiz()"
     style="font-weight: bolder; padding: 20px 40px; background-color: rgb(239, 255, 239);">
@@ -7,7 +7,7 @@
   </mat-card-content>
 </mat-card>
 
-<div class="container question-wrap float-right" *ngIf="qSelected != 0">
+<div class="container question-wrap float-right" *ngIf="showQuestion">
   <mat-card style="background-color: aliceblue; margin-top: 20px; padding: 30px ; height: 200px;" >
     <mat-card-header style="top: 30%;">
       <mat-card-title>

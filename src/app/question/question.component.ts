@@ -23,9 +23,13 @@ export class QuestionComponent implements OnInit {
       res => this.correct = res
     )
    }
-
+   showQuestion = false;
   ngOnInit(): void {
     this.getQuestionDetails(this.qSelected)
+    console.log("this kjd", this.selectedArr)
+    if(this.qSelected != 0) {
+      this.showQuestion = true;
+    }
 
   }
 
@@ -38,7 +42,7 @@ export class QuestionComponent implements OnInit {
   checkAnswer(answer) {
     if(this.qService.QuestionArray[this.qSelected-1].correctAns == answer) {
       this.isCorrect = true;
-    
+
     }
     console.log("kjsdfk", this.qService.QuestionArray)
   }
@@ -57,6 +61,7 @@ export class QuestionComponent implements OnInit {
   }
 
   startQuiz() {
+    this.showQuestion =true;
     this.qSelected = 1;
     this.qService.qSelected.next(this.qSelected);
     this.getQuestionDetails(this.qSelected)
@@ -77,7 +82,8 @@ export class QuestionComponent implements OnInit {
   goToNext() {
     this.qSelected += 1;
     this.qService.qSelected.next(this.qSelected);
-    this.getQuestionDetails(this.qSelected)
+    this.getQuestionDetails(this.qSelected);
+    this.isCorrect = false;
 
   }
 
